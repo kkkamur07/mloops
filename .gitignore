@@ -3,5 +3,7 @@
 cheatsheets/
 dtu_mlops
 mloops/
-../plant-seedings/models/
+plant-seedings/models/
+brain-tumour-segmentation/data/
+brain-tumour-segmentation/models/
 
