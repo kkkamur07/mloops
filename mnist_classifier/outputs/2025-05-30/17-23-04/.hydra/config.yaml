@@ -1,0 +1,8 @@
+version_base: 1.1
+hyperparameters:
+  seed: 1234
+  lr: 0.001
+  epochs: 10
+  show_architecture: true
+  batch_size: 32
+  num_workers: 4

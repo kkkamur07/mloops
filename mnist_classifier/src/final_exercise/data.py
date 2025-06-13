@@ -3,7 +3,6 @@
 import torch
 from torchvision import datasets, transforms
 
-
 test_images = torch.load("data/processed/test_images.pt")
 test_labels = torch.load("data/processed/test_target.pt")
 train_labels = torch.load("data/processed/train_target.pt")

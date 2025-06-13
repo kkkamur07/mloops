@@ -1,4 +1,6 @@
 [core]
-    remote = storage
-['remote "storage"']
-    url = gdrive://1J3eCAkSnPfmWrSmWdwOj4ExYGJRHARPc
+    remote = nextcloud
+['remote "nextcloud"']
+    url = webdavs://kkrrish.tech/remote.php/dav/files/krrish/dvc-storage
+    user = krrish
+    password = JfGbH-2RPYW-HPEer-NL4E6-ZZfBo

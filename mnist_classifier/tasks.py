@@ -71,3 +71,17 @@ def build_docs(ctx: Context) -> None:
 def serve_docs(ctx: Context) -> None:
     """Serve documentation."""
     ctx.run("mkdocs serve --config-file docs/mkdocs.yaml", echo=True, pty=not WINDOWS)
+
+@task
+def python(ctx) : 
+    ctx.run("which python" if os.name != "nt" else "where python", echo=True, pty=not WINDOWS)
+    
+@task
+def git(ctx , commit : str) : 
+    ctx.run("git --version", echo=True, pty=not WINDOWS)
+    
+    # For committing using invoke
+    # ctx.run("git add .", echo=True, pty=not WINDOWS)
+    # ctx.run(f"git commit -m '{commit_message}'", echo=True, pty=not WINDOWS)
+    
+    
