@@ -12,23 +12,20 @@ RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 
 # The previous steps are very common.
 
-# Copy the requirements 
+# Copy the requirements
 # COPY <from> <to> -> Trying to keep docker as small as possible
 
-COPY requirements.txt requirements.txt 
+COPY requirements.txt requirements.txt
 COPY pyproject.toml pyproject.toml
 COPY src/ src/
 COPY data/ data/
 COPY models/ models/
 
-# Setting up the working directory. --no-cache-dir is important to keep the image size small. 
+# Setting up the working directory. --no-cache-dir is important to keep the image size small.
 WORKDIR /
 RUN pip install -r requirements.txt --no-cache-dir
 RUN pip install . --no-deps --no-cache-dir
 
 # Entry point
-ENTRYPOINT ["python", "-u", "src/final_exercise/model.py"] 
+ENTRYPOINT ["python", "-u", "src/final_exercise/model.py"]
 # -u redirects stdout and stderr to the console, which is useful for debugging.
-
-
-

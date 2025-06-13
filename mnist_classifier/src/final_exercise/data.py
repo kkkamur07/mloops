@@ -16,7 +16,7 @@ def get_data_loaders(test_images = test_images, test_labels = test_labels, train
         transforms.ToTensor(),
         transforms.Normalize((0.5,), (0.5,))
     ])
-    
+
     # Float and Long
     train_images = train_images.unsqueeze(1).float()
     train_labels = train_labels.long()
@@ -36,4 +36,3 @@ def get_data_loaders(test_images = test_images, test_labels = test_labels, train
 if __name__ == "__main__":
     train_loader, test_loader = get_data_loaders(test_images, test_labels, train_images, train_labels)
     print("Data loaders created successfully.")
-    
