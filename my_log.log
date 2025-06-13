@@ -1,0 +1,4 @@
+2025-06-02 14:32:44.603 | INFO     | __main__:<module>:8 - Informative messages from your code.
+2025-06-02 14:32:44.608 | WARNING  | __main__:<module>:9 - Everything works but there is something to be aware of.
+2025-06-02 14:32:44.612 | ERROR    | __main__:<module>:10 - There's been a mistake with the process.
+2025-06-02 14:32:44.653 | CRITICAL | __main__:<module>:11 - There is something terribly wrong and process may terminate.

@@ -28,7 +28,7 @@ scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)
 x_test = scaler.transform(x_test)
 
-# This is how we can define the subcommands. 
+# This is how we can define the subcommands.
 @train_app.command()
 def svm(kernel: str = "linear", output_file: Annotated[str, typer.Option("--output", "-o")] = "model.ckpt") -> None:
     """Train a SVM model."""
@@ -87,7 +87,7 @@ def main():
     print("Here's the data")
     print(data)
     print("[bold red]Alert![/bold red] [green]Portal gun[/green] shooting! :boom:")
-    
+
 MARKDOWN = """
 # This is an h1
 
@@ -106,7 +106,7 @@ def table():
     console.print(table)
     console.print(Markdown(MARKDOWN), markup=True)
 
-    
+
 # It also has other features like progress bars, prompt, markdown, panel
 
 # Progress bars
@@ -114,7 +114,7 @@ import time
 from rich.progress import Progress
 
 @color.command()
-def pros() : 
+def pros() :
     with Progress() as progress:
         task1 = progress.add_task("[cyan]Processing...", total=100)
         task2 = progress.add_task("[magenta]Loading...", total=50)

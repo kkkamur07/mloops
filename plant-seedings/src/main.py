@@ -15,7 +15,7 @@ def train(
     save_dir: str = typer.Option("models", "-s", "--save-dir", help="Directory to save model checkpoints")
 ):
     """Train the plant seedlings classifier end-to-end."""
-    
+
     # Step 1: Load and prepare data
     print(f"\n=== Data Loading ===")
     train_loader, val_loader, classes = get_dataloaders(
@@ -23,11 +23,11 @@ def train(
         val_split=val_split,
         batch_size=batch_size
     )
-    
+
     if not train_loader or not val_loader:
         print("Error: Failed to load datasets. Exiting.")
         return
-    
+
     # Step 2: Create model
     print(f"\n=== Model Creation ===")
     model = BaselineCNN(
@@ -35,17 +35,17 @@ def train(
         lr=lr,
         epochs=epochs
     )
-    
+
     # Step 3: Train model
     print(f"\n=== Training Started ===")
     os.makedirs(save_dir, exist_ok=True)
     model.train_model(
-        train_loader=train_loader, 
+        train_loader=train_loader,
         val_loader=val_loader,
         save_dir=save_dir,
         verbose=True
     )
-    
+
     print(f"\n=== Training Complete ===")
     print(f"Model checkpoints saved to {save_dir}/")
 
