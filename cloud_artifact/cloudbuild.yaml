@@ -1,0 +1,18 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Build container image'
+  args: [
+    'build',
+    '.',
+    '-t',
+    'europe-west10-docker.pkg.dev/mlops-462817/mlops-artifact/justimage',
+    '-f', 'build.dockerfile'
+  ]
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'Push container image'
+  args: [
+    'push',
+    'europe-west10-docker.pkg.dev/mlops-462817/mlops-artifact/justimage'
+  ]
+options:
+  logging: CLOUD_LOGGING_ONLY
